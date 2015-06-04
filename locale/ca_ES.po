@@ -2,6 +2,10 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+msgctxt "field:account.invoice.line,supplier_reference:"
+msgid "Supplier Reference"
+msgstr "Referència de proveïdor"
+
 msgctxt "field:purchase.product_supplier,product_code:"
 msgid "Product Code"
 msgstr "Codi producte"
