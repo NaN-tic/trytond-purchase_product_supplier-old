@@ -5,10 +5,10 @@ from trytond.pool import Pool, PoolMeta
 
 
 __all__ = ['InvoiceLine']
-__metaclass__ = PoolMeta
 
 
 class InvoiceLine:
+    __metaclass__ = PoolMeta
     __name__ = 'account.invoice.line'
     supplier_reference = fields.Function(fields.Char('Supplier Reference'),
         'on_change_with_supplier_reference')
