@@ -28,5 +28,11 @@ class ProductSupplier:
     @classmethod
     def search_rec_name(cls, name, clause):
         domain = super(ProductSupplier, cls).search_rec_name(name, clause)
-        domain = ['OR', ('product.products.code',) + tuple(clause[1:]), domain]
-        return domain
+        if clause[1].startswith('!') or clause[1].startswith('not '):
+            bool_op = 'AND'
+        else:
+            bool_op = 'OR'
+        return [bool_op,
+            domain,
+            ('product.products.code',) + tuple(clause[1:])
+            ]
