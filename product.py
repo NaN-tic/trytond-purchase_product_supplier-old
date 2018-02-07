@@ -10,7 +10,8 @@ __all__ = ['ProductSupplier']
 class ProductSupplier:
     __metaclass__ = PoolMeta
     __name__ = 'purchase.product_supplier'
-    product_code = fields.Function(fields.Char('Product Code'), 'get_product_code',
+    product_code = fields.Function(
+        fields.Char('Product Code'), 'get_product_code',
         searcher='search_product_code_field')
 
     def get_product_code(self, name):

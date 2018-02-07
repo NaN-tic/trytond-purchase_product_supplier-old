@@ -17,4 +17,4 @@ class InvoiceLine:
     def on_change_with_supplier_reference(self, name=None):
         PurchaseLine = Pool().get('purchase.line')
         if self.origin and isinstance(self.origin, PurchaseLine().__class__):
-            return self.origin.purchase.supplier_reference
+            return self.origin.purchase.reference
